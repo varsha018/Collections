@@ -1,0 +1,78 @@
+How does put() method of hashMap works in JAVA ==> on hashing principle
+HashMap stores values in key-value pair
+On basis of "key", it will calculate HASHCODE e.g: 170268
+then int index is calculated to get the index where key,value will be stored
+the index represents the LINKEDLIST NODE==> INDEX NUM | KEY | VALUE
+whatever is the calculated value of INDEX, on that place key-value gets stored..
+
+HASHCODE() APPLIED on KEY at the time of PUT
+EQUALS() METHOD APPLIED at the time of GET when you are fetching the values..matches the KEY with the help of .equals
+
+when you try to store a KEY which is already present >>it will override the previous key ==>won't throw any exception..
+|TOM | 12|
+|TOM |23 |
+
+latest value of TOM will be 23
+
+we can store 1 null key in HASHMAP
+we can store multiple null values in HashMap
+
+How does HashMp handle collisIons in JAVA?
+e.g: at index 4, many pairs of key-values are stored>> how will hashMap handle this??
+| index: 4| key: Tom  |value: 100|
+| index: 4| key: Peter|value: 200|
+| index: 4| key: Harry|value: 300|
+A LINKED LIST gets created to handle all these values at one index
+
+
+Which data structure HashMap represents?
+HashTable.. and when collision occurs then LINKEDLIST(time complexity: O(n))
+When the collision reaches the limit of 8
+then LINKEDLIST is converted into BALANCED BINARY TREE(time complexity: O(log n).(higher values at one side and lower at other)
+
+can you store duplicate key/value in hashMap? NO, not allowed..if written, it will override the previous key.
+
+HashMap is not thread-safe.
+For Thread safe==>use either concurrent hashMap or Synchronized Map
+
+If you use HashMap in MultiThreaded Java Application, all threads will try to put,change,modify,get values simultaneously
+and the entire data structure  may get corrupted.
+
+Different ways to iterate over HashMap in JAVA?
+Using keySet and iterator
+Using EntrySet and Iterator
+Using EntrySet and enhanced for loop
+Using keySet and Get method
+Using forEach method with LAMBDA
+
+To remove mapping while iterating over HashMap -->remove method
+
+In which order mappings are stores in HashMap ??? Random order(on basis of hashCode)
+
+Can you sort HashMap in JAVA? ==> no order and no index is maintained, 
+								  so no sorting is possible>> everyTime>> value of INDEX changes..
+								  Convert into LinkedHashMap or SORTED MAP you can sort
+									
+									
+LOAD FACTOR in hashMap?? A number that calculates the Resizing of the HASHMAP
+When number of element in hashMap cross the load factor AS if the load factor is 0.75
+then when becoming more than 75% full then re-sizing triggers which involves array copy
+
+
+How does Resizing happens in HASHMAP ==> load factor
+
+How many entries you can store in hashMap? Maximum Limit?==>No maximum limit..
+No limit==> keeps re-sizing
+
+Capacity==> how many elements hashMap can store (virtual capacity)
+size==> how many key-value pairs are currently present in hashMap(physical capacity)
+
+Virtual Capacity==>total number of elements that can be stored =16 (first time)
+Physical capacity ==> number of pairs present currently ==> 4 (let's assume)
+
+
+when 2 keys have same hashCode()==COLLISION will happen==> linkedList gets created
+
+ 
+
+
